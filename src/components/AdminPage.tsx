@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { useNotification } from '../context/NotificationContext';
+import { useNotifications } from '../context/NotificationContext';
 import { 
   Settings, 
   Users, 
@@ -23,7 +23,7 @@ import {
 
 const AdminPage: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
-  const { addNotification, notifications, clearNotifications, settings, updateSettings } = useNotification();
+  const { addNotification, notifications, clearAllNotifications } = useNotifications();
   const [activeTab, setActiveTab] = useState('appearance');
 
   const tabs = [
