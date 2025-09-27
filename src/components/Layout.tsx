@@ -27,7 +27,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { notifications, clearAllNotifications } = useNotifications();
 
   const navigation = [
-    { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
     { name: 'Análise de Embalagens', href: '/analise', icon: Camera },
     { name: 'Inventário', href: '/inventario', icon: Package },
     { name: 'Administração', href: '/admin', icon: Settings },

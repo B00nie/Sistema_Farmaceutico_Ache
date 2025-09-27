@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
-import Dashboard from './components/Dashboard';
 import AnalysisPage from './components/AnalysisPage';
 import InventoryPage from './components/InventoryPage';
 import AdminPage from './components/AdminPage';
@@ -28,11 +27,10 @@ function AppRoutes() {
               isAuthenticated ? (
                 <Layout>
                   <Routes>
-                    <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/analise" element={<AnalysisPage />} />
                     <Route path="/inventario" element={<InventoryPage />} />
                     <Route path="/admin" element={<AdminPage />} />
-                    <Route path="/" element={<Navigate to="/dashboard" />} />
+                    <Route path="/" element={<Navigate to="/analise" />} />
                   </Routes>
                   <Chatbot />
                 </Layout>

@@ -444,19 +444,19 @@ const AdminPage: React.FC = () => {
 
           {activeTab === 'models' && (
             <div className="space-y-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                   Modelos YOLOv8 - Caixas e Cartelas
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 border border-gray-200 rounded-lg">
+                  <div className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-gray-900">yolov8n-caixas-cartelas.pt</h4>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100">yolov8n-caixas-cartelas.pt</h4>
                       <span className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
                         Ativo
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 mb-3">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                       Modelo especializado em detectar caixas farmacêuticas e cartelas de comprimidos
                     </p>
                     <div className="flex items-center space-x-4">
@@ -464,24 +464,24 @@ const AdminPage: React.FC = () => {
                         <Upload className="w-4 h-4 mr-1" />
                         Atualizar
                       </button>
-                      <span className="text-xs text-gray-500">Acurácia: 94.2% (caixas/cartelas) | Última atualização: 15/01/2024</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">Acurácia: 94.2% (caixas/cartelas) | Última atualização: 15/01/2024</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                   Configurações OpenCV - Frascos e Blisters
                 </h3>
-                <div className="mb-4 p-3 bg-green-50 rounded-lg">
-                  <p className="text-sm text-green-800">
+                <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <p className="text-sm text-green-800 dark:text-green-300">
                     <strong>Especialização:</strong> Parâmetros otimizados para análise de frascos (tampas, integridade) e blisters (alvéolos, perfurações).
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Sensibilidade Detecção Tampa
                     </label>
                     <input
@@ -489,12 +489,12 @@ const AdminPage: React.FC = () => {
                       defaultValue="0.7"
                       step="0.1"
                       min="0.1"
-                      max="1.0"
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">0.7 (70%)</div>
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Threshold Integridade Frasco
                     </label>
                     <input
@@ -502,22 +502,22 @@ const AdminPage: React.FC = () => {
                       defaultValue="0.8"
                       step="0.1"
                       min="0.1"
-                      max="1.0"
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">0.8 (80%)</div>
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Modo de Análise
                     </label>
-                    <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500">
+                    <select className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100">
                       <option>Frascos + OCR</option>
                       <option>Blisters + Contagem</option>
                       <option>Análise Completa</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Precisão OCR Rótulos
                     </label>
                     <input
@@ -527,7 +527,7 @@ const AdminPage: React.FC = () => {
                       min="0.1"
                       max="1.0"
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500"
-                    />
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                   </div>
                 </div>
               </div>
@@ -536,69 +536,69 @@ const AdminPage: React.FC = () => {
 
           {activeTab === 'chatbot' && (
             <div className="space-y-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                   Configurações do Chatbot
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Nome do Assistente
                     </label>
                     <input
                       type="text"
                       defaultValue="Assistente Farmacêutico"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Mensagem de Boas-vindas
                     </label>
                     <textarea
                       rows={3}
                       defaultValue="Olá! Sou o assistente do sistema de análise farmacêutica. Como posso ajudá-lo hoje?"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                     />
                   </div>
                   
                   <div>
                     <label className="flex items-center">
                       <input type="checkbox" defaultChecked className="mr-2 rounded border-gray-300 text-pink-600 focus:ring-pink-500" />
-                      <span className="text-sm text-gray-700">Chatbot ativo</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">Chatbot ativo</span>
                     </label>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                   Base de Conhecimento
                 </h3>
                 <div className="space-y-3">
-                  <div className="p-3 border border-gray-200 rounded-lg">
+                  <div className="p-3 border border-gray-200 dark:border-gray-600 rounded-lg">
                     <div className="flex items-center justify-between">
-                      <span className="font-medium">FAQ Análises</span>
-                      <button className="text-blue-600 hover:text-blue-900 text-sm">Editar</button>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">FAQ Análises</span>
+                      <button className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 text-sm">Editar</button>
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">12 perguntas e respostas sobre análises</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">12 perguntas e respostas sobre análises</p>
                   </div>
                   
-                  <div className="p-3 border border-gray-200 rounded-lg">
+                  <div className="p-3 border border-gray-200 dark:border-gray-600 rounded-lg">
                     <div className="flex items-center justify-between">
-                      <span className="font-medium">Procedimentos Operacionais</span>
-                      <button className="text-blue-600 hover:text-blue-900 text-sm">Editar</button>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">Procedimentos Operacionais</span>
+                      <button className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 text-sm">Editar</button>
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">8 procedimentos padrão documentados</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">8 procedimentos padrão documentados</p>
                   </div>
                   
-                  <div className="p-3 border border-gray-200 rounded-lg">
+                  <div className="p-3 border border-gray-200 dark:border-gray-600 rounded-lg">
                     <div className="flex items-center justify-between">
-                      <span className="font-medium">Troubleshooting</span>
-                      <button className="text-blue-600 hover:text-blue-900 text-sm">Editar</button>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">Troubleshooting</span>
+                      <button className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 text-sm">Editar</button>
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">15 problemas comuns e soluções</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">15 problemas comuns e soluções</p>
                   </div>
                 </div>
                 
@@ -612,74 +612,74 @@ const AdminPage: React.FC = () => {
 
           {activeTab === 'security' && (
             <div className="space-y-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                   Configurações de Segurança
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Tempo de Sessão (minutos)
                     </label>
                     <input
                       type="number"
                       defaultValue="60"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Tentativas de Login
                     </label>
                     <input
                       type="number"
                       defaultValue="5"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-1 focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                     />
                   </div>
                   
                   <div>
                     <label className="flex items-center">
                       <input type="checkbox" defaultChecked className="mr-2 rounded border-gray-300 text-pink-600 focus:ring-pink-500" />
-                      <span className="text-sm text-gray-700">Forçar HTTPS</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">Forçar HTTPS</span>
                     </label>
                   </div>
                   
                   <div>
                     <label className="flex items-center">
                       <input type="checkbox" defaultChecked className="mr-2 rounded border-gray-300 text-pink-600 focus:ring-pink-500" />
-                      <span className="text-sm text-gray-700">Log de auditoria ativo</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">Log de auditoria ativo</span>
                     </label>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                   Chaves de API
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <div className="flex items-center">
-                      <Key className="w-5 h-5 text-gray-400 mr-3" />
+                      <Key className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-3" />
                       <div>
-                        <p className="font-medium text-gray-900">YOLOv8 API Key</p>
-                        <p className="text-sm text-gray-600">••••••••••••••••••••</p>
+                        <p className="font-medium text-gray-900 dark:text-gray-100">YOLOv8 API Key</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">••••••••••••••••••••</p>
                       </div>
                     </div>
-                    <button className="text-blue-600 hover:text-blue-900 text-sm">Regenerar</button>
+                    <button className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 text-sm">Regenerar</button>
                   </div>
                   
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <div className="flex items-center">
-                      <Key className="w-5 h-5 text-gray-400 mr-3" />
+                      <Key className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-3" />
                       <div>
-                        <p className="font-medium text-gray-900">OpenCV API Key</p>
-                        <p className="text-sm text-gray-600">••••••••••••••••••••</p>
+                        <p className="font-medium text-gray-900 dark:text-gray-100">OpenCV API Key</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">••••••••••••••••••••</p>
                       </div>
                     </div>
-                    <button className="text-blue-600 hover:text-blue-900 text-sm">Regenerar</button>
+                    <button className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 text-sm">Regenerar</button>
                   </div>
                 </div>
               </div>
