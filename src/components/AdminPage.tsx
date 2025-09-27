@@ -26,6 +26,22 @@ const AdminPage: React.FC = () => {
   const { addNotification, notifications, clearAllNotifications } = useNotifications();
   const [activeTab, setActiveTab] = useState('appearance');
 
+  // Estado para configurações de notificação
+  const [settings, setSettings] = useState({
+    duration: 5000, // 5 segundos
+    types: {
+      success: true,
+      warning: true,
+      error: true,
+      info: true
+    }
+  });
+
+  // Função para atualizar configurações
+  const updateSettings = (newSettings: Partial<typeof settings>) => {
+    setSettings(prev => ({ ...prev, ...newSettings }));
+  };
+
   const tabs = [
     { id: 'appearance', label: 'Aparência', icon: Eye },
     { id: 'ai-models', label: 'Modelos IA', icon: Brain },
