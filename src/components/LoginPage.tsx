@@ -3,6 +3,22 @@ import { Shield, Mail, Lock, Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const LoginPage: React.FC = () => {
+  const LogoSection = () => (
+    <div style={{
+      position: 'absolute',
+      top: 20,
+      right: 20,
+      display: 'flex',
+      alignItems: 'center',
+      gap: '10px',
+      zIndex: 10
+    }}>
+      <img src="/Logo_Ache.png" alt="Logo Aché" style={{ height: 50 }} />
+      <img src="/Logo_Liora.png" alt="Logo Liora" style={{ height: 50 }} />
+      {/* Exemplo de como adicionar uma nova imagem PNG */}
+      {/* <img src="/sua-imagem.png" alt="Descrição da imagem" style={{ height: 50 }} /> */}
+    </div>
+  );
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -29,6 +45,8 @@ const LoginPage: React.FC = () => {
   };
 
   return (
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <LogoSection />
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
         <div className="text-center mb-8">
@@ -130,6 +148,7 @@ const LoginPage: React.FC = () => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
